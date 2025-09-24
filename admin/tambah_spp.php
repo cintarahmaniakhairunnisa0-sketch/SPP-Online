@@ -1,7 +1,6 @@
 <?php
 include_once "../src/koneksi.php";
 
-# SKRIP TOMBOL SIMPAN DIKLIK
 if(isset($_POST['btnSimpan'])) {
     $id_spp          = $_POST['id_spp'];
     $tahun           = $_POST['tahun'];

@@ -41,7 +41,7 @@ if(isset($_POST['btnSimpan'])){
         $sqlEdit = mysqli_query($koneksi, "UPDATE petugas SET username='$username', password='$password', 
                                            nama_petugas='$nama_petugas', level='$level' WHERE id_petugas='$id_petugas'");
         if($sqlEdit){
-            echo "<center><b><font color='red' size='4'><p>Data Berhasil diubah</p></font></b></center>";
+            echo "<center><b><font color='green' size='4'><p>Data Berhasil diubah</p></font></b></center>";
             echo "<meta http-equiv='refresh' content='2; url=?open=data_petugas'>";
         }
         else{
@@ -52,14 +52,12 @@ if(isset($_POST['btnSimpan'])){
     }
 }
 
-
-
 $id_petugas = $_GET['id_petugas'];
-$sql        = mysqli_query(koneksi, "SELECT * FROM petugas WHERE id_petugas = $id_petugas'");
+$sql        = mysqli_query($koneksi, "SELECT * FROM petugas WHERE id_petugas = '$id_petugas'");
 $data       = mysqli_fetch_array($sql);
 ?>
 
-<form action="<?php $_SERVER['PHP_SELF']; ?>" method="post">
+<form action="" method="post">
 <table cellspacing="1" cellpadding="3">
 <tr>
     <td bgcolor="#CCCCCC"><strong>EDIT DATA PETUGAS</strong></td>
@@ -68,7 +66,7 @@ $data       = mysqli_fetch_array($sql);
     <td>Id Petugas</td>
     <td>:</td>
     <td><input name="id_petugas" type="text" size="10" maxlength="10" 
-               value="<?php echo $data['id_petugas']; ?>" /></td>
+               value="<?php echo $data['id_petugas']; ?>" readonly /></td>
 </tr>
 <tr>
     <td>Username</td>
@@ -93,9 +91,9 @@ $data       = mysqli_fetch_array($sql);
     <td>:</td>
     <td>
         <select name="level">
-            <option value="Kosong">-- Pilih Level --</option>
-            <option value="Admin">Admin</option>
-            <option value="Petugas">Petugas</option>
+            <option value="">-- Pilih Level --</option>
+            <option value="Admin" <?php echo ($data['level'] == 'Admin') ? 'selected' : ''; ?>>Admin</option>
+            <option value="Petugas" <?php echo ($data['level'] == 'Petugas') ? 'selected' : ''; ?>>Petugas</option>
         </select>
     </td>
 </tr>
