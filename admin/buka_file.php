@@ -70,6 +70,13 @@ if(isset($_GET['open'])) {
             if(!file_exists ("edit_siswa.php")) die ("File tidak ada !");
             include "edit_siswa.php"; break;
 
+             case 'logout' :
+            session_unset();
+            session_destroy();
+            header("Location: ../index.php");
+            exit();
+            break;
+
             default:
             if(!file_exists ("informasi_utama.php")) die ("file tidak ada !");
             include "informasi_utama.php";
