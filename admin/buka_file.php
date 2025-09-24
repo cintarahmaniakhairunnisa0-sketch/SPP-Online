@@ -18,77 +18,76 @@ if(isset($_GET['open'])) {
             include "hapus_spp.php"; break;
 
         case 'edit_spp' :
-         if(!file_exists ("edit_spp.php")) die ("File tidak ada !");
+            if(!file_exists ("edit_spp.php")) die ("File tidak ada !");
             include "edit_spp.php"; break;
 
+        case 'data_pembayaran' :
+            if(!file_exists ("pembayaran.php")) die ("File tidak ada !");
+            include "pembayaran.php"; break;
 
-            case 'data_pembayaran' :
-                if(!file_exists ("pembayaran.php")) die ("File tidak ada !");
-                include "pembayaran.php"; break;
-
-
-
-             case 'data_petugas' ;
+        case 'data_petugas' :
             if(!file_exists ("data_petugas.php")) die ("File tidak ada !");
             include "data_petugas.php"; break;
-             case 'tambah_petugas' ;
+            
+        case 'tambah_petugas' :
             if(!file_exists ("tambah_petugas.php")) die ("File tidak ada !");
             include "tambah_petugas.php"; break;
-             case 'hapus_petugas' ;
+            
+        case 'hapus_petugas' :
             if(!file_exists ("hapus_petugas.php")) die ("File tidak ada !");
             include "hapus_petugas.php"; break;
-             case 'edit_petugas' ;
+            
+        case 'edit_petugas' :
             if(!file_exists ("edit_petugas.php")) die ("File tidak ada !");
             include "edit_petugas.php"; break;
 
-
-
-           case 'data_kelas' ;
+        case 'data_kelas' :
             if(!file_exists ("data_kelas.php")) die ("File tidak ada !");
             include "data_kelas.php"; break;
-             case 'tambah_kelas' ;
+            
+        case 'tambah_kelas' :
             if(!file_exists ("tambah_kelas.php")) die ("File tidak ada !");
             include "tambah_kelas.php"; break;
-             case 'hapus_kelas' ;
+            
+        case 'hapus_kelas' :
             if(!file_exists ("hapus_kelas.php")) die ("File tidak ada !");
             include "hapus_kelas.php"; break;
-             case 'edit_kelas' ;
+            
+        case 'edit_kelas' :
             if(!file_exists ("edit_kelas.php")) die ("File tidak ada !");
             include "edit_kelas.php"; break;
 
-
-             case 'data_siswa' ;
+        case 'data_siswa' :
             if(!file_exists ("data_siswa_c.php")) die ("File tidak ada !");
             include "data_siswa_c.php"; break;
-             case 'tambah_siswa' ;
+            
+        case 'tambah_siswa' :
             if(!file_exists ("tambah_siswa.php")) die ("File tidak ada !");
             include "tambah_siswa.php"; break;
-             case 'hapus_siswa' ;
+            
+        case 'hapus_siswa' :
             if(!file_exists ("hapus_siswa.php")) die ("File tidak ada !");
             include "hapus_siswa.php"; break;
-             case 'edit_siswa' ;
+            
+        case 'edit_siswa' :
             if(!file_exists ("edit_siswa.php")) die ("File tidak ada !");
             include "edit_siswa.php"; break;
 
-             case 'logout' :
+        case 'logout' :
             session_unset();
             session_destroy();
             header("Location: ../index.php");
             exit();
             break;
 
-            default:
+        default:
             if(!file_exists ("informasi_utama.php")) die ("file tidak ada !");
             include "informasi_utama.php";
             break;
-
-       
     }
 }
-
 else {
     if(!file_exists("informasi_utama.php")) die ("file tidak ada  !");
     include "informasi_utama.php";
 }
-    
 ?>
